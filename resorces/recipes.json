@@ -1,0 +1,14 @@
+[
+	{
+		"combination": ["Q", "W", "E"],
+		"result": "Poción de Fuego"
+	},
+	{
+		"combination": ["W", "W", "E"],
+		"result": "Poción de Hielo"
+	},
+	{
+		"combination": ["Q", "Q", "W"],
+		"result": "Poción de Tierra"
+	}
+]

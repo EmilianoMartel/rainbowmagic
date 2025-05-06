@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpellResource" load_steps=2 format=3 uid="uid://dbn8ew3l00je5"]
+
+[ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="1_phb3u"]
+
+[resource]
+script = ExtResource("1_phb3u")
+name = "Fire"
+combination = Array[StringName]([&"FirstPower", &"FirstPower", &"FirstPower"])
+color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://bnw2cs11djrbm"

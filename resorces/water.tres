@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpellResource" load_steps=2 format=3 uid="uid://bw2y7uqusrev"]
+
+[ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="1_vplis"]
+
+[resource]
+script = ExtResource("1_vplis")
+name = "Water"
+combination = Array[StringName]([&"FirstPower", &"SecondPower", &"ThirdPower"])
+color = Color(0.192364, 0.422229, 1, 1)
+metadata/_custom_type_script = "uid://bnw2cs11djrbm"

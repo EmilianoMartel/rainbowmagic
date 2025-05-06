@@ -1,12 +1,17 @@
-[gd_scene format=3 uid="uid://cu5uvmxxt77gw"]
+[gd_scene load_steps=3 format=3 uid="uid://cu5uvmxxt77gw"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" uid="uid://dlx1mkbbo1wwi" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://c7xsvycfditan" path="res://scenes/main_game.tscn" id="2_ekxnf"]
+
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l6cm7")
+other_scene = ExtResource("2_ekxnf")
 
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 0
@@ -17,6 +22,7 @@ offset_bottom = 289.0
 text = "Play"
 
 [node name="OptionButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 452.0
 offset_top = 304.0
 offset_right = 663.0
@@ -24,6 +30,7 @@ offset_bottom = 359.0
 text = "Options"
 
 [node name="CreditButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 454.0
 offset_top = 375.0
 offset_right = 665.0
@@ -31,8 +38,11 @@ offset_bottom = 430.0
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 455.0
 offset_top = 446.0
 offset_right = 666.0
 offset_bottom = 501.0
 text = "Exit"
+
+[connection signal="button_down" from="PlayButton" to="." method="_on_play_button_button_down"]

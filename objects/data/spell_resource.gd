@@ -9,7 +9,7 @@ func compare_combination(input_combination: Array[StringName]) -> bool:
 	if combination.size() != input_combination.size():
 		return false
 	
-	for i in combination.size():
+	for i in range(combination.size()):
 		if combination[i] != input_combination[i]:
 			return false
 	

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qax30u8c36cy"
-path="res://.godot/imported/spells.png-a9eda29bc7eb675ea2a19c895fc9e85e.ctex"
+uid="uid://cibkut0ykv8cl"
+path="res://.godot/imported/bg.png-e09ec2808113460abc377b4396b7e93d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/spells.png"
-dest_files=["res://.godot/imported/spells.png-a9eda29bc7eb675ea2a19c895fc9e85e.ctex"]
+source_file="res://art/bgs/bg.png"
+dest_files=["res://.godot/imported/bg.png-e09ec2808113460abc377b4396b7e93d.ctex"]
 
 [params]
 

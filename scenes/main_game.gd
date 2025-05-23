@@ -45,6 +45,7 @@ func get_new_recipe():
 	
 	if success + fails >= spells_max_count:
 		print("Final Game sucess: ", success ," fails: ", fails)
+		GameData.player_won = success > fails
 		get_tree().change_scene_to_packed(final_scene)
 		return
 	

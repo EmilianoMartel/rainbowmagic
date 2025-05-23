@@ -6,10 +6,10 @@
 [ext_resource type="Resource" uid="uid://bw2y7uqusrev" path="res://resorces/water.tres" id="3_ygxny"]
 [ext_resource type="PackedScene" uid="uid://caqkv0bluen13" path="res://scenes/end_game.tscn" id="4_2l77h"]
 [ext_resource type="Texture2D" uid="uid://ccr51xcbqbn5d" path="res://art/mago.png" id="4_ygxny"]
-[ext_resource type="Texture2D" uid="uid://cibkut0ykv8cl" path="res://art/bg.png" id="5_nqdth"]
+[ext_resource type="Texture2D" uid="uid://cibkut0ykv8cl" path="res://art/bgs/bg.png" id="5_nqdth"]
 [ext_resource type="PackedScene" uid="uid://cp00wscnxftj4" path="res://scenes/ui_game.tscn" id="6_ygxny"]
 [ext_resource type="Texture2D" uid="uid://cvtwl7kckjb0q" path="res://art/spell.png" id="7_wi4c7"]
-[ext_resource type="Texture2D" uid="uid://cql1m2y71c7w5" path="res://art/leo.png" id="8_70vka"]
+[ext_resource type="Texture2D" uid="uid://cql1m2y71c7w5" path="res://art/spells_icons/leo.png" id="8_70vka"]
 
 [node name="MainGame" type="Node2D" node_paths=PackedStringArray("input_handler", "ui")]
 script = ExtResource("1_s3esy")

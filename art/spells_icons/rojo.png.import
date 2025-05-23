@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bruj1pr2kss7c"
-path="res://.godot/imported/jupiter.png-7b70dddfb2e23328b533c47e223a0372.ctex"
+uid="uid://c3vjh3r2hlnve"
+path="res://.godot/imported/rojo.png-12499beebb37470dc5dac0cec39e3635.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/jupiter.png"
-dest_files=["res://.godot/imported/jupiter.png-7b70dddfb2e23328b533c47e223a0372.ctex"]
+source_file="res://art/spells_icons/rojo.png"
+dest_files=["res://.godot/imported/rojo.png-12499beebb37470dc5dac0cec39e3635.ctex"]
 
 [params]
 

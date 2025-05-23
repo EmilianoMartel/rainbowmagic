@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dimou40lee4p6"
-path="res://.godot/imported/naranja.png-185b95ef9c110deb7d5dfc1540b50bef.ctex"
+uid="uid://0l44mokpnpbe"
+path="res://.godot/imported/tierra.png-8a6397c0e0a94691718a5ebca2651ccc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/naranja.png"
-dest_files=["res://.godot/imported/naranja.png-185b95ef9c110deb7d5dfc1540b50bef.ctex"]
+source_file="res://art/spells_icons/tierra.png"
+dest_files=["res://.godot/imported/tierra.png-8a6397c0e0a94691718a5ebca2651ccc.ctex"]
 
 [params]
 

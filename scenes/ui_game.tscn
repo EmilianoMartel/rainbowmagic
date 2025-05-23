@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://diu61ryv5eemu" path="res://objects/ui_game.gd" id="1_35xpy"]
 [ext_resource type="Texture2D" uid="uid://c7clwkorfau3w" path="res://art/lista.png" id="2_a7cbq"]
-[ext_resource type="Texture2D" uid="uid://qax30u8c36cy" path="res://art/spells.png" id="3_y6wst"]
+[ext_resource type="Texture2D" uid="uid://qax30u8c36cy" path="res://art/spells_icons/spells.png" id="3_y6wst"]
 [ext_resource type="Texture2D" uid="uid://55nivwpl5ng" path="res://art/square.png" id="4_rwq73"]
 
 [sub_resource type="GDScript" id="GDScript_a7cbq"]
@@ -94,6 +94,7 @@ texture = ExtResource("2_a7cbq")
 expand_mode = 1
 
 [node name="Spells" type="TextureRect" parent="List"]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 50.0
 offset_right = 64.0
@@ -110,6 +111,7 @@ offset_bottom = 84.0
 text = "QQQ  + R"
 
 [node name="Label2" type="Label" parent="List"]
+layout_mode = 0
 offset_left = 75.0
 offset_top = 106.0
 offset_right = 202.0
@@ -117,6 +119,7 @@ offset_bottom = 133.0
 text = "QWE  + R"
 
 [node name="Label3" type="Label" parent="List"]
+layout_mode = 0
 offset_left = 73.0
 offset_top = 160.0
 offset_right = 200.0
@@ -138,6 +141,7 @@ texture = ExtResource("4_rwq73")
 expand_mode = 1
 
 [node name="Label4" type="Label" parent="."]
+layout_mode = 0
 offset_left = 455.0
 offset_top = 552.0
 offset_right = 668.0

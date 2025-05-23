@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SpellResource" load_steps=3 format=3 uid="uid://dbn8ew3l00je5"]
 
 [ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="1_xmc4f"]
-[ext_resource type="Texture2D" uid="uid://cql1m2y71c7w5" path="res://art/leo.png" id="2_pifww"]
+[ext_resource type="Texture2D" uid="uid://cql1m2y71c7w5" path="res://art/spells_icons/leo.png" id="2_pifww"]
 
 [resource]
 script = ExtResource("1_xmc4f")

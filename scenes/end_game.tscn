@@ -1,14 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://caqkv0bluen13"]
+[gd_scene load_steps=5 format=3 uid="uid://caqkv0bluen13"]
 
-[ext_resource type="Texture2D" uid="uid://cibkut0ykv8cl" path="res://art/bg.png" id="1_dpvxj"]
+[ext_resource type="Texture2D" uid="uid://cibkut0ykv8cl" path="res://art/bgs/bg.png" id="1_dpvxj"]
 [ext_resource type="Script" uid="uid://duwuttpu25cbd" path="res://scenes/end_game.gd" id="1_uwdrl"]
-[ext_resource type="PackedScene" uid="uid://cu5uvmxxt77gw" path="res://scenes/main_menu.tscn" id="2_5pifh"]
 [ext_resource type="Texture2D" uid="uid://dafpuvlnd6q0f" path="res://art/Fail.png" id="2_uwdrl"]
 [ext_resource type="Texture2D" uid="uid://b7ef28yx806b0" path="res://art/Success.png" id="3_0h6i1"]
 
 [node name="EndGame" type="Node2D" node_paths=PackedStringArray("WinOrLose")]
 script = ExtResource("1_uwdrl")
-final_scene = ExtResource("2_5pifh")
 Success = ExtResource("3_0h6i1")
 Fail = ExtResource("2_uwdrl")
 WinOrLose = NodePath("Fail")

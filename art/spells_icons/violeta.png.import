@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjlaujtfbxjg4"
-path="res://.godot/imported/Button.png-8fafaef58baa92ebcf2d323b3ab3a005.ctex"
+uid="uid://5tveacs0w56c"
+path="res://.godot/imported/violeta.png-12be9f3bedbb46c7aafb4ac202aa64b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Button.png"
-dest_files=["res://.godot/imported/Button.png-8fafaef58baa92ebcf2d323b3ab3a005.ctex"]
+source_file="res://art/spells_icons/violeta.png"
+dest_files=["res://.godot/imported/violeta.png-12be9f3bedbb46c7aafb4ac202aa64b6.ctex"]
 
 [params]
 

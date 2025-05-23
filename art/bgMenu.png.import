@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5tveacs0w56c"
-path="res://.godot/imported/violeta.png-2a1f45ab80c2b0a636385b3272c4680b.ctex"
+uid="uid://c50w43lb6qyu3"
+path="res://.godot/imported/bgMenu.png-4968d2eee955ba392e3e7e9a6425a19e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/violeta.png"
-dest_files=["res://.godot/imported/violeta.png-2a1f45ab80c2b0a636385b3272c4680b.ctex"]
+source_file="res://art/bgMenu.png"
+dest_files=["res://.godot/imported/bgMenu.png-4968d2eee955ba392e3e7e9a6425a19e.ctex"]
 
 [params]
 

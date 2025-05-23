@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy2ocyxw0flq2"
-path="res://.godot/imported/runas.png-8caf06a738d057f337351d0068935bc6.ctex"
+uid="uid://c7clwkorfau3w"
+path="res://.godot/imported/lista.png-625f874102c71f4d13823cba07c28271.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/runas.png"
-dest_files=["res://.godot/imported/runas.png-8caf06a738d057f337351d0068935bc6.ctex"]
+source_file="res://art/lista.png"
+dest_files=["res://.godot/imported/lista.png-625f874102c71f4d13823cba07c28271.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

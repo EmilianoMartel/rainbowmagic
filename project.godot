@@ -15,6 +15,16 @@ run/main_scene="uid://cu5uvmxxt77gw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameData="*res://objects/gameplay/game_data.gd"
+
+[importer_defaults]
+
+texture={
+&"mipmaps/generate": true
+}
+
 [input]
 
 FirstPower={

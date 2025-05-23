@@ -3,6 +3,24 @@ extends Control
 
 @export var input : Input_Handler
 @export var game_manager : Main_Game
+@export var left_bar: ProgressBar
+@export var right_bar: ProgressBar
+@export var timer: Timer
+@export var spell_to_do : Sprite2D
+@export var spell : Sprite2D
+
+@export var duration: float = 60
+
+var is_timer_sttoped: bool
+signal time_end
+
+func _process(delta):
+	if timer.time_left > 0 || !is_timer_sttoped:
+		var total_time = timer.wait_time
+		var elapsed_time = total_time - timer.time_left
+		var percent = elapsed_time / total_time
+		left_bar.value = percent * left_bar.max_value
+		right_bar.value = percent * right_bar.max_value
 
 func _ready():
 	input.first_action.connect(handle_first_rune)
@@ -11,6 +29,7 @@ func _ready():
 	
 	game_manager.success_combination.connect(handle_success)
 	game_manager.wrong_combination.connect(handle_fail)
+	reset_time()
 	pass
 
 func handle_first_rune():
@@ -22,11 +41,33 @@ func handle_second_rune():
 func handle_thirt_rune():
 	pass
 
-func handle_success():
-	pass
+func handle_success(color: Color) -> void:
+	timer.stop()
+	is_timer_sttoped = true
+	var temp_color :Color = spell.modulate
+	var tween := create_tween()
+	tween.tween_property(spell, "modulate", color, 0.3)
+	await tween.finished
+	await get_tree().create_timer(1.4).timeout
+	tween = create_tween()
+	tween.tween_property(spell, "modulate", temp_color, 0.3)
+	await tween.finished
+	reset_time()
 
 func handle_fail():
 	pass
 
-func activate_rune_view():
+func activate_rune_view(sprite:Texture):
+	spell_to_do.texture = sprite
 	pass
+
+func reset_time():
+	is_timer_sttoped = false
+	timer.wait_time = duration
+	timer.one_shot = true
+	timer.start()
+	left_bar.value = 0
+	right_bar.value = 0
+
+func _on_timer_timeout() -> void:
+	time_end.emit()

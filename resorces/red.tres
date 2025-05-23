@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SpellResource" load_steps=3 format=3 uid="uid://c52wfbn8kv8nh"]
+
+[ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="1_hheth"]
+[ext_resource type="Texture2D" uid="uid://c3vjh3r2hlnve" path="res://art/rojo.png" id="2_8j6og"]
+
+[resource]
+script = ExtResource("1_hheth")
+name = "Red"
+combination = Array[StringName]([&"FirstPower", &"ThirdPower", &"ThirdPower"])
+color = Color(0.729412, 0.184314, 0.152941, 1)
+type_view = ExtResource("2_8j6og")
+metadata/_custom_type_script = "uid://bnw2cs11djrbm"

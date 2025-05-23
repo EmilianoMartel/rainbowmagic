@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="SpellResource" load_steps=2 format=3 uid="uid://bw2y7uqusrev"]
+[gd_resource type="Resource" script_class="SpellResource" load_steps=3 format=3 uid="uid://bw2y7uqusrev"]
 
 [ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="1_vplis"]
+[ext_resource type="Texture2D" uid="uid://bruj1pr2kss7c" path="res://art/jupiter.png" id="2_nvaq3"]
 
 [resource]
 script = ExtResource("1_vplis")
 name = "Water"
 combination = Array[StringName]([&"FirstPower", &"SecondPower", &"ThirdPower"])
 color = Color(0.192364, 0.422229, 1, 1)
+type_view = ExtResource("2_nvaq3")
 metadata/_custom_type_script = "uid://bnw2cs11djrbm"

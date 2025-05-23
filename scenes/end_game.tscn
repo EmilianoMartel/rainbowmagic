@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://nb4cuk8gthd1"]
+
+[ext_resource type="Texture2D" uid="uid://lpry4m8eytda" path="res://art/placeholders/d0675e75e10ac79ff8af6245eb4d804b.jpg" id="1_dpvxj"]
+[ext_resource type="Script" uid="uid://dmd0jkwdfmu5k" path="res://scenes/end_game.gd" id="1_uwdrl"]
+[ext_resource type="Texture2D" uid="uid://b7ef28yx806b0" path="res://art/Success.png" id="3_0py74"]
+[ext_resource type="PackedScene" uid="uid://cu5uvmxxt77gw" path="res://scenes/main_menu.tscn" id="3_5pifh"]
+[ext_resource type="Texture2D" uid="uid://dafpuvlnd6q0f" path="res://art/Fail.png" id="4_0h6i1"]
+
+[node name="EndGame" type="Node2D" node_paths=PackedStringArray("WinOrLose")]
+script = ExtResource("1_uwdrl")
+other_scene = ExtResource("3_5pifh")
+Success = ExtResource("3_0py74")
+Fail = ExtResource("4_0h6i1")
+WinOrLose = NodePath("BG/WinOrLose")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(538.75, 299.5)
+scale = Vector2(1.92857, 1.92857)
+texture = ExtResource("1_dpvxj")
+
+[node name="WinOrLose" type="Sprite2D" parent="BG"]
+position = Vector2(-83.3519, 15.2963)
+rotation = -0.375711
+scale = Vector2(0.256545, 0.256545)
+texture = ExtResource("3_0py74")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 649.0
+
+[node name="PlayButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -120.0
+offset_right = 92.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back  Menu"
+
+[connection signal="button_down" from="Control/PlayButton" to="." method="_on_play_button_button_down"]

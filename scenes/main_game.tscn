@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7xsvycfditan"]
+[gd_scene load_steps=12 format=3 uid="uid://c7xsvycfditan"]
 
 [ext_resource type="Script" uid="uid://b13m5syl4v3a6" path="res://scenes/main_game.gd" id="1_s3esy"]
 [ext_resource type="Script" uid="uid://bcjio3n2ce7sd" path="res://objects/input_handler.gd" id="2_d2op2"]
 [ext_resource type="Resource" uid="uid://dbn8ew3l00je5" path="res://resorces/lion.tres" id="2_ipu61"]
 [ext_resource type="Resource" uid="uid://bw2y7uqusrev" path="res://resorces/water.tres" id="3_ygxny"]
 [ext_resource type="PackedScene" uid="uid://caqkv0bluen13" path="res://scenes/end_game.tscn" id="4_2l77h"]
+[ext_resource type="Resource" uid="uid://c52wfbn8kv8nh" path="res://resorces/red.tres" id="4_5cypo"]
 [ext_resource type="Texture2D" uid="uid://ccr51xcbqbn5d" path="res://art/mago.png" id="4_ygxny"]
 [ext_resource type="Texture2D" uid="uid://cibkut0ykv8cl" path="res://art/bgs/bg.png" id="5_nqdth"]
 [ext_resource type="PackedScene" uid="uid://cp00wscnxftj4" path="res://scenes/ui_game.tscn" id="6_ygxny"]
@@ -14,9 +15,9 @@
 [node name="MainGame" type="Node2D" node_paths=PackedStringArray("input_handler", "ui")]
 script = ExtResource("1_s3esy")
 input_handler = NodePath("Icon")
-spells_max_count = 2
+spells_max_count = 5
 ui = NodePath("UI_Game")
-spell_resources = Array[Resource]([ExtResource("2_ipu61"), ExtResource("3_ygxny")])
+spell_resources = Array[Resource]([ExtResource("2_ipu61"), ExtResource("3_ygxny"), ExtResource("4_5cypo")])
 final_scene = ExtResource("4_2l77h")
 
 [node name="Bg" type="Sprite2D" parent="."]

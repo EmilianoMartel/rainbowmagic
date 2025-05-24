@@ -27,7 +27,6 @@ func reset_game():
 func _on_confirm(combination: Array):
 	if current_spell and current_spell.compare_combination(combination):
 		print("Succes:", current_spell.name)
-		success_combination.emit()
 		success += 1
 		ui.handle_success(current_spell.color)
 	else:

@@ -11,11 +11,12 @@ extends Control
 
 @export var duration: float = 60
 
-var is_timer_sttoped: bool
+var to_change_image : Texture
+var is_timer_stopped: bool = false
 signal time_end
 
 func _process(delta):
-	if timer.time_left > 0 || !is_timer_sttoped:
+	if timer.time_left > 0 || !is_timer_stopped:
 		var total_time = timer.wait_time
 		var elapsed_time = total_time - timer.time_left
 		var percent = elapsed_time / total_time
@@ -43,7 +44,7 @@ func handle_thirt_rune():
 
 func handle_success(color: Color) -> void:
 	timer.stop()
-	is_timer_sttoped = true
+	is_timer_stopped = true
 	var temp_color :Color = spell.modulate
 	var tween := create_tween()
 	tween.tween_property(spell, "modulate", color, 0.3)
@@ -52,17 +53,27 @@ func handle_success(color: Color) -> void:
 	tween = create_tween()
 	tween.tween_property(spell, "modulate", temp_color, 0.3)
 	await tween.finished
+	
+	spell_to_do.texture = to_change_image
 	reset_time()
 
 func handle_fail():
+	timer.stop()
+	spell_to_do.texture = to_change_image
+	
+	reset_time()
 	pass
 
-func activate_rune_view(sprite:Texture):
+func first_rune_view(sprite:Texture):
 	spell_to_do.texture = sprite
+
+func activate_rune_view(sprite:Texture):
+	to_change_image = sprite
 	pass
 
 func reset_time():
-	is_timer_sttoped = false
+	is_timer_stopped = false
+	timer.stop()
 	timer.wait_time = duration
 	timer.one_shot = true
 	timer.start()

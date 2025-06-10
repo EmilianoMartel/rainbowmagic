@@ -7,6 +7,7 @@ signal first_action
 signal second_action
 signal third_action
 signal confirm(combination: Array)
+signal mix(combination: Array)
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("FirstPower"):
@@ -17,6 +18,9 @@ func _physics_process(delta: float) -> void:
 		add_new_input("ThirdPower")
 	if Input.is_action_just_pressed("Confirm"):
 		confirm.emit(current_combination)
+		current_combination.clear()
+	if Input.is_action_just_pressed("Mix"):
+		mix.emit(current_combination)
 		current_combination.clear()
 
 func add_new_input(add_input: String) -> void:

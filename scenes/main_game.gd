@@ -10,6 +10,7 @@ extends Node2D
 var success : int = 0
 var fails : int = 0
 var current_spell : SpellResource
+var current_combitnation: Array
 
 signal success_combination
 signal wrong_combination
@@ -37,6 +38,9 @@ func _on_confirm(combination: Array):
 	
 	get_new_recipe()
 
+func _on_mix(combination: Array):
+	pass
+
 func get_new_recipe():
 	if spell_resources.is_empty():
 		push_error("There any spell resource at this obj.")
@@ -50,7 +54,10 @@ func get_new_recipe():
 	
 	var random_index = randi() % spell_resources.size()
 	current_spell = spell_resources[random_index] as SpellResource
-	ui.activate_rune_view(current_spell.type_view)
+	if(fails + success == 0):
+		ui.first_rune_view(current_spell.type_view)
+	else:
+		ui.activate_rune_view(current_spell.type_view)
 	print("New spell: ", current_spell.name, " -> ", current_spell.combination)
 
 func _on_ui_game_time_end() -> void:

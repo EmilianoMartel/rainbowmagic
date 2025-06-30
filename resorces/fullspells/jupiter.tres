@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SpellResource" load_steps=5 format=3 uid="uid://bvemsjjpgbyke"]
+
+[ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="1_5vceq"]
+[ext_resource type="Resource" uid="uid://2vnc67ego0k" path="res://resorces/QWE.tres" id="2_jsj81"]
+[ext_resource type="Script" uid="uid://d1fivg5a8xrkr" path="res://objects/data/special_spell.gd" id="2_twuc4"]
+[ext_resource type="Texture2D" uid="uid://bruj1pr2kss7c" path="res://art/spells_icons/jupiter.png" id="4_o13im"]
+
+[resource]
+script = ExtResource("2_twuc4")
+name = "Jupiter"
+combination = Array[ExtResource("1_5vceq")]([ExtResource("2_jsj81")])
+color = Color(0, 0, 1, 1)
+type_view = ExtResource("4_o13im")
+metadata/_custom_type_script = "uid://d1fivg5a8xrkr"

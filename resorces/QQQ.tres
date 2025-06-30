@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="BasicSpell" load_steps=2 format=3 uid="uid://nppa8esb24qc"]
+
+[ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="1_60s4v"]
+
+[resource]
+script = ExtResource("1_60s4v")
+combination = Array[StringName]([&"FirstPower", &"FirstPower", &"FirstPower"])
+metadata/_custom_type_script = "uid://bnw2cs11djrbm"

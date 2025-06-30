@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SpellResource" load_steps=5 format=3 uid="uid://b2500hxw8euvl"]
+
+[ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="1_gmh8c"]
+[ext_resource type="Script" uid="uid://d1fivg5a8xrkr" path="res://objects/data/special_spell.gd" id="2_p4l46"]
+[ext_resource type="Resource" uid="uid://coypkjrwyn42w" path="res://resorces/QEE.tres" id="2_t3d3f"]
+[ext_resource type="Texture2D" uid="uid://c3vjh3r2hlnve" path="res://art/spells_icons/rojo.png" id="4_a2ltp"]
+
+[resource]
+script = ExtResource("2_p4l46")
+name = "red"
+combination = Array[ExtResource("1_gmh8c")]([ExtResource("2_t3d3f")])
+color = Color(1, 0, 0, 1)
+type_view = ExtResource("4_a2ltp")
+metadata/_custom_type_script = "uid://d1fivg5a8xrkr"

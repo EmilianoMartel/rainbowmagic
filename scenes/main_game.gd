@@ -6,7 +6,10 @@ extends Node2D
 @export var ui : Ui_Game
 @export var spell_resources : Array[Resource] = []
 @export var final_scene : PackedScene
+@export var basic_spells_list: Array[BasicSpell] = []
 
+var known_basic_spells: Array[BasicSpell] = []
+var known_spells: Array[StringName] = []
 var success : int = 0
 var fails : int = 0
 var current_spell : SpellResource
@@ -25,21 +28,32 @@ func reset_game():
 	fails = 0
 	get_new_recipe()
 
-func _on_confirm(combination: Array):
-	if current_spell and current_spell.compare_combination(combination):
-		print("Succes:", current_spell.name)
-		success += 1
-		ui.handle_success(current_spell.color)
-	else:
-		print("Wrong combination.")
-		wrong_combination.emit()
+func _on_confirm(combination: Array[StringName]):
+	var created_basic_spell = false
+	
+	for basic_spell in basic_spells_list:
+		if basic_spell.compare_combination(combination):
+			if not current_spell.combination.has(basic_spell):
+				print("¡Has creado un BasicSpell válido, pero no es parte de esta receta!")
+				continue
+			
+			if not known_basic_spells.has(basic_spell):
+				known_basic_spells.append(basic_spell)
+			
+			created_basic_spell = true
+			ui.handle_success(current_spell.color)
+			success += 1
+			success_combination.emit()
+			break 
+
+	if not created_basic_spell:
+		print("No has creado ningún BasicSpell válido para esta receta.")
 		ui.handle_fail()
 		fails += 1
+		wrong_combination.emit()
 	
+	# Pide la siguiente receta
 	get_new_recipe()
-
-func _on_mix(combination: Array):
-	pass
 
 func get_new_recipe():
 	if spell_resources.is_empty():
@@ -67,3 +81,24 @@ func _on_ui_game_time_end() -> void:
 	
 	get_new_recipe()
 	pass
+
+func _on_mix(combination: Array):
+	for name in combination:
+		if not known_spells.has(name):
+			print("No tienes el hechizo:", name)
+			ui.handle_fail()
+			return
+	
+	if current_spell and current_spell.compare_combination(combination):
+		print("Success mixing:", current_spell.name)
+		success += 1
+		ui.handle_success(current_spell.color)
+		success_combination.emit()
+		known_spells.append(current_spell.name)
+	else:
+		print("Wrong mix.")
+		wrong_combination.emit()
+		ui.handle_fail()
+		fails += 1
+	
+	get_new_recipe()

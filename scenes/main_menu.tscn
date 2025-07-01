@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cu5uvmxxt77gw"]
+[gd_scene load_steps=9 format=3 uid="uid://cu5uvmxxt77gw"]
 
 [ext_resource type="Script" uid="uid://dlx1mkbbo1wwi" path="res://scenes/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://c7xsvycfditan" path="res://scenes/main_game.tscn" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://ccr51xcbqbn5d" path="res://art/mago.png" id="3_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://drtsx02fpdhft" path="res://art/bgs/bgMenu.png" id="3_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://rgpmg5j43be5" path="res://sound/Floating Dream.mp3" id="3_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://bruj1pr2kss7c" path="res://art/spells_icons/jupiter.png" id="4_8ln24"]
 [ext_resource type="Texture2D" uid="uid://cvtwl7kckjb0q" path="res://art/spell.png" id="4_wu84c"]
 [ext_resource type="Texture2D" uid="uid://qmbm3wur5uq2" path="res://art/bgs/credits.png" id="7_oa1go"]
@@ -18,6 +19,10 @@ grow_vertical = 2
 script = ExtResource("1_l6cm7")
 other_scene = ExtResource("2_ekxnf")
 credits = NodePath("Credits")
+
+[node name="FloatingDream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tbmy8")
+autoplay = true
 
 [node name="BgMenu" type="Sprite2D" parent="."]
 position = Vector2(576.889, 326.375)

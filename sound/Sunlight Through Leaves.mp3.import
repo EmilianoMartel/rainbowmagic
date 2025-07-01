@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b17e8f0f8wa48"
+path="res://.godot/imported/Sunlight Through Leaves.mp3-5439769c08a9a90ea84a11925a3de590.mp3str"
+
+[deps]
+
+source_file="res://sound/Sunlight Through Leaves.mp3"
+dest_files=["res://.godot/imported/Sunlight Through Leaves.mp3-5439769c08a9a90ea84a11925a3de590.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

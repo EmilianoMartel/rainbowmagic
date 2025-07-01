@@ -8,12 +8,14 @@ extends Control
 @export var timer: Timer
 @export var spell_to_do : Sprite2D
 @export var spell : Sprite2D
-
+@export var spells_label : Label
 @export var duration: float = 60
 
 var to_change_image : Texture
 var is_timer_stopped: bool = false
 signal time_end
+
+var current_combination: String
 
 func _process(delta):
 	if timer.time_left > 0 || !is_timer_stopped:
@@ -27,6 +29,8 @@ func _ready():
 	input.first_action.connect(handle_first_rune)
 	input.second_action.connect(handle_second_rune)
 	input.third_action.connect(handle_thirt_rune)
+	input.confirm.connect(handle_confirm)
+	input.mix.connect(handle_confirm)
 	
 	game_manager.success_combination.connect(handle_success)
 	game_manager.wrong_combination.connect(handle_fail)
@@ -34,13 +38,25 @@ func _ready():
 	pass
 
 func handle_first_rune():
-	pass
+	if current_combination.length() >= 3:
+		current_combination = current_combination.substr(1)
+	
+	current_combination += "Q"
+	spells_label.text = current_combination
 
 func handle_second_rune():
-	pass
+	if current_combination.length() >= 3:
+		current_combination = current_combination.substr(1)
+	
+	current_combination += "W"
+	spells_label.text = current_combination
 
 func handle_thirt_rune():
-	pass
+	if current_combination.length() >= 3:
+		current_combination = current_combination.substr(1)
+	
+	current_combination += "E"
+	spells_label.text = current_combination
 
 func handle_success(color: Color) -> void:
 	timer.stop()
@@ -82,3 +98,8 @@ func reset_time():
 
 func _on_timer_timeout() -> void:
 	time_end.emit()
+
+func handle_confirm(combination: Array[StringName]):
+	current_combination = ""
+	spells_label.text = current_combination
+	pass

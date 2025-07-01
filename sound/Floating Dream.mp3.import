@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rgpmg5j43be5"
+path="res://.godot/imported/Floating Dream.mp3-44f22fef1724de12b8d11daae04e0f49.mp3str"
+
+[deps]
+
+source_file="res://sound/Floating Dream.mp3"
+dest_files=["res://.godot/imported/Floating Dream.mp3-44f22fef1724de12b8d11daae04e0f49.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

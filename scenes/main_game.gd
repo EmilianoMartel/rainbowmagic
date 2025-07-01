@@ -43,7 +43,6 @@ func _on_confirm(combination: Array[StringName]):
 			created_basic_spell = true
 			ui.handle_success(current_spell.color)
 			success += 1
-			success_combination.emit()
 			break 
 
 	if not created_basic_spell:

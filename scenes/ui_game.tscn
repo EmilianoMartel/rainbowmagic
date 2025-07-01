@@ -132,6 +132,20 @@ offset_right = 200.0
 offset_bottom = 187.0
 text = "QEE  + R"
 
+[node name="Label7" type="Label" parent="List"]
+offset_left = 69.0
+offset_top = 314.0
+offset_right = 218.0
+offset_bottom = 341.0
+text = "QWE + D + QEE + R"
+
+[node name="Label6" type="Label" parent="List"]
+offset_left = 72.0
+offset_top = 261.0
+offset_right = 221.0
+offset_bottom = 288.0
+text = "QQQ + D + QEE + R"
+
 [node name="Label5" type="Label" parent="List"]
 layout_mode = 0
 offset_left = 70.0

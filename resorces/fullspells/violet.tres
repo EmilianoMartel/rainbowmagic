@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpellResource" load_steps=6 format=3 uid="uid://b4yvlh3440cbx"]
+
+[ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="1_470yb"]
+[ext_resource type="Resource" uid="uid://2vnc67ego0k" path="res://resorces/QWE.tres" id="2_dpiy3"]
+[ext_resource type="Script" uid="uid://d1fivg5a8xrkr" path="res://objects/data/special_spell.gd" id="2_dv2ae"]
+[ext_resource type="Resource" uid="uid://coypkjrwyn42w" path="res://resorces/QEE.tres" id="3_p808o"]
+[ext_resource type="Texture2D" uid="uid://5tveacs0w56c" path="res://art/spells_icons/violeta.png" id="5_7gepp"]
+
+[resource]
+script = ExtResource("2_dv2ae")
+name = "Spell"
+combination = Array[ExtResource("1_470yb")]([ExtResource("2_dpiy3"), ExtResource("3_p808o")])
+color = Color(0.726304, 0.000402084, 0.726299, 1)
+type_view = ExtResource("5_7gepp")
+metadata/_custom_type_script = "uid://d1fivg5a8xrkr"

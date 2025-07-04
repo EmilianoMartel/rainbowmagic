@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cv4bcc5kgbgdj" path="res://art/mainmenu.png" id="4_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://cxxmd7pf5pavo" path="res://art/ui/play.png" id="6_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://dljkeauditynh" path="res://art/ui/options.png" id="7_flqon"]
-[ext_resource type="Texture2D" uid="uid://qmbm3wur5uq2" path="res://art/bgs/credits.png" id="7_oa1go"]
 [ext_resource type="Texture2D" uid="uid://8cw0l80gn62p" path="res://art/ui/credits.png" id="8_rcqid"]
 [ext_resource type="Texture2D" uid="uid://bvdni2sex71yv" path="res://art/new/mano front.png" id="9_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://uiceg4r33m8d" path="res://art/spell_color/amarillo.png" id="9_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://6hw72sg41tae" path="res://art/creditos.png" id="10_lgwnu"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("credits")]
 layout_mode = 3
@@ -73,7 +73,7 @@ texture = ExtResource("9_lgwnu")
 visible = false
 position = Vector2(586.333, 333.5)
 scale = Vector2(0.460417, 0.460417)
-texture = ExtResource("7_oa1go")
+texture = ExtResource("10_lgwnu")
 
 [node name="BackToMenuC" type="Button" parent="Credits"]
 offset_left = -159.276

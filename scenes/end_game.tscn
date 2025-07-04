@@ -1,26 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://caqkv0bluen13"]
+[gd_scene load_steps=3 format=3 uid="uid://caqkv0bluen13"]
 
-[ext_resource type="Texture2D" uid="uid://cibkut0ykv8cl" path="res://art/bgs/bg.png" id="1_dpvxj"]
 [ext_resource type="Script" uid="uid://duwuttpu25cbd" path="res://scenes/end_game.gd" id="1_uwdrl"]
-[ext_resource type="Texture2D" uid="uid://dafpuvlnd6q0f" path="res://art/Fail.png" id="2_uwdrl"]
-[ext_resource type="Texture2D" uid="uid://b7ef28yx806b0" path="res://art/Success.png" id="3_0h6i1"]
+[ext_resource type="Texture2D" uid="uid://pujslnsfbus5" path="res://art/approved.png" id="5_0h6i1"]
 
 [node name="EndGame" type="Node2D" node_paths=PackedStringArray("WinOrLose")]
 script = ExtResource("1_uwdrl")
-Success = ExtResource("3_0h6i1")
-Fail = ExtResource("2_uwdrl")
+Success = ExtResource("5_0h6i1")
+Fail = ExtResource("5_0h6i1")
 WinOrLose = NodePath("Fail")
 
-[node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(566, 322)
-scale = Vector2(0.4625, 0.4625)
-texture = ExtResource("1_dpvxj")
-
 [node name="Fail" type="Sprite2D" parent="."]
-position = Vector2(569, 263)
-rotation = -0.447975
+position = Vector2(571, 324)
 scale = Vector2(0.458984, 0.458984)
-texture = ExtResource("2_uwdrl")
+texture = ExtResource("5_0h6i1")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -30,10 +22,11 @@ offset_bottom = 40.0
 
 [node name="Back" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 440.0
-offset_top = 516.0
-offset_right = 718.0
-offset_bottom = 619.0
+offset_left = 15.0
+offset_top = 524.0
+offset_right = 293.0
+offset_bottom = 627.0
 text = "BACK"
+flat = true
 
 [connection signal="button_up" from="Control/Back" to="." method="_on_back_button_up"]

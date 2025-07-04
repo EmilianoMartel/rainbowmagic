@@ -8,8 +8,12 @@ extends Control
 @export var timer: Timer
 @export var spell_to_do : Sprite2D
 @export var spell : Sprite2D
-@export var spells_label : Label
 @export var duration: float = 60
+@export var rune_slots: Array[TextureRect] = []
+@export var q_image: Texture2D
+@export var w_image: Texture2D
+@export var e_image: Texture2D
+@export var empty_image : Texture2D
 
 var to_change_image : Texture
 var is_timer_stopped: bool = false
@@ -42,35 +46,46 @@ func handle_first_rune():
 		current_combination = current_combination.substr(1)
 	
 	current_combination += "Q"
-	spells_label.text = current_combination
+	combination()
 
 func handle_second_rune():
 	if current_combination.length() >= 3:
 		current_combination = current_combination.substr(1)
 	
 	current_combination += "W"
-	spells_label.text = current_combination
+	combination()
 
 func handle_thirt_rune():
 	if current_combination.length() >= 3:
 		current_combination = current_combination.substr(1)
 	
 	current_combination += "E"
-	spells_label.text = current_combination
+	combination()
 
-func handle_success(color: Color) -> void:
+func combination():
+	for i in range(len(current_combination)):
+		var letter = current_combination[i]
+		match letter:
+			"Q":
+				rune_slots[i].texture = q_image
+			"W":
+				rune_slots[i].texture = w_image
+			"E":
+				rune_slots[i].texture = e_image
+
+func handle_success(new_texture: Texture2D) -> void:
 	timer.stop()
 	is_timer_stopped = true
-	var temp_color :Color = spell.modulate
+	
 	var tween := create_tween()
-	tween.tween_property(spell, "modulate", color, 0.3)
+	tween.tween_property(spell_to_do, "modulate:a", 0.0, 0.3)
+	
+	spell.texture = new_texture
+	spell.modulate.a = 0.0
+	tween.tween_property(spell, "modulate:a", 1.0, 0.3)
 	await tween.finished
 	await get_tree().create_timer(1.4).timeout
-	tween = create_tween()
-	tween.tween_property(spell, "modulate", temp_color, 0.3)
-	await tween.finished
-	
-	spell_to_do.texture = to_change_image
+	spell_to_do.modulate.a = 1.0
 	reset_time()
 
 func handle_fail():
@@ -95,11 +110,16 @@ func reset_time():
 	timer.start()
 	left_bar.value = 0
 	right_bar.value = 0
+	spell.modulate.a = 0.0
 
 func _on_timer_timeout() -> void:
 	time_end.emit()
 
 func handle_confirm(combination: Array[StringName]):
 	current_combination = ""
-	spells_label.text = current_combination
+	empty()
 	pass
+
+func empty():
+	for i in range(len(rune_slots)):
+		rune_slots[i].texture = empty_image

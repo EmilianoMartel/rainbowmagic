@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://cp00wscnxftj4"]
+[gd_scene load_steps=12 format=3 uid="uid://cp00wscnxftj4"]
 
 [ext_resource type="Script" uid="uid://diu61ryv5eemu" path="res://objects/ui_game.gd" id="1_35xpy"]
-[ext_resource type="Texture2D" uid="uid://c7clwkorfau3w" path="res://art/lista.png" id="2_a7cbq"]
-[ext_resource type="Texture2D" uid="uid://qax30u8c36cy" path="res://art/spells_icons/spells.png" id="3_y6wst"]
-[ext_resource type="Texture2D" uid="uid://d1dobylgemt6h" path="res://art/barra de spells.png" id="4_rwq73"]
+[ext_resource type="Texture2D" uid="uid://cuus7srh0uemp" path="res://art/rock/p_e.png" id="2_2n343"]
+[ext_resource type="Texture2D" uid="uid://ru1krsqmd4s7" path="res://art/new/reloj.png" id="2_64lfe"]
+[ext_resource type="Texture2D" uid="uid://c0fmbdr5vwno8" path="res://art/enchantment list.png" id="2_y6wst"]
+[ext_resource type="Texture2D" uid="uid://dj5c78rpdhhww" path="res://art/rock/W.png" id="3_381rh"]
+[ext_resource type="Texture2D" uid="uid://ytykgbaf8d54" path="res://art/rock/Q.png" id="4_64lfe"]
+[ext_resource type="Texture2D" uid="uid://by6cu4vokr533" path="res://art/rock/E.png" id="4_ws08y"]
+[ext_resource type="Texture2D" uid="uid://bxta3wei8hpgf" path="res://art/spell_color/azul.png" id="5_2qula"]
+[ext_resource type="Texture2D" uid="uid://uiceg4r33m8d" path="res://art/spell_color/amarillo.png" id="6_2n343"]
+[ext_resource type="Texture2D" uid="uid://cmq8dteyanpwd" path="res://art/spell_color/rojo.png" id="7_v8d4b"]
 
 [sub_resource type="GDScript" id="GDScript_a7cbq"]
 script/source = "extends Control
@@ -33,12 +39,7 @@ func _on_ui_game_reset_timer() -> void:
 	reset_timer()
 "
 
-[sub_resource type="LabelSettings" id="LabelSettings_rwq73"]
-paragraph_spacing = 10.0
-font_size = 45
-font_color = Color(0, 0, 0, 1)
-
-[node name="UI_Game" type="Control" node_paths=PackedStringArray("left_bar", "right_bar", "timer", "spells_label")]
+[node name="UI_Game" type="Control" node_paths=PackedStringArray("left_bar", "right_bar", "timer", "rune_slots")]
 layout_mode = 3
 anchor_right = 1.0
 anchor_bottom = 0.991
@@ -50,39 +51,53 @@ script = ExtResource("1_35xpy")
 left_bar = NodePath("ProgressBar")
 right_bar = NodePath("ProgressBar2")
 timer = NodePath("Timer")
-spells_label = NodePath("SpellsLabel")
 duration = 10.0
+rune_slots = [NodePath("01"), NodePath("02"), NodePath("03")]
+q_image = ExtResource("4_64lfe")
+w_image = ExtResource("3_381rh")
+e_image = ExtResource("4_ws08y")
+empty_image = ExtResource("2_2n343")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
-offset_left = 585.0
-offset_top = 26.0
-offset_right = 915.0
-offset_bottom = 51.0
+offset_left = 596.0
+offset_top = 34.0
+offset_right = 926.0
+offset_bottom = 59.0
 mouse_filter = 2
 value = 70.0
 show_percentage = false
 
 [node name="ProgressBar2" type="ProgressBar" parent="."]
 layout_mode = 1
-offset_left = 255.0
-offset_top = 26.0
-offset_right = 585.0
-offset_bottom = 51.0
+offset_left = 266.0
+offset_top = 34.0
+offset_right = 596.0
+offset_bottom = 59.0
 mouse_filter = 2
 value = 70.0
 fill_mode = 1
 show_percentage = false
+
+[node name="timer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 30.0
+offset_right = 623.0
+offset_bottom = 63.0
+texture = ExtResource("2_64lfe")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Time_bar" type="Control" parent="." node_paths=PackedStringArray("left_bar", "right_bar", "timer")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -499.0
-offset_top = 10.0
-offset_right = -459.0
-offset_bottom = 50.0
+offset_left = -488.0
+offset_top = 18.0
+offset_right = -448.0
+offset_bottom = 58.0
 grow_horizontal = 2
 script = SubResource("GDScript_a7cbq")
 left_bar = NodePath("../ProgressBar2")
@@ -94,81 +109,150 @@ duration = 30.0
 
 [node name="List" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 220.0
-offset_bottom = 367.0
-texture = ExtResource("2_a7cbq")
+offset_left = 37.0
+offset_top = 96.0
+offset_right = 265.0
+offset_bottom = 476.0
+texture = ExtResource("2_y6wst")
 expand_mode = 1
-
-[node name="Spells" type="TextureRect" parent="List"]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 50.0
-offset_right = 64.0
-offset_bottom = 345.0
-texture = ExtResource("3_y6wst")
-expand_mode = 1
+stretch_mode = 4
 
 [node name="Label" type="Label" parent="List"]
 layout_mode = 0
-offset_left = 79.0
-offset_top = 57.0
-offset_right = 206.0
-offset_bottom = 84.0
+offset_left = 67.0
+offset_top = 59.0
+offset_right = 194.0
+offset_bottom = 86.0
 text = "QQQ  + R"
 
 [node name="Label2" type="Label" parent="List"]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 106.0
-offset_right = 202.0
-offset_bottom = 133.0
+offset_left = 63.0
+offset_top = 108.0
+offset_right = 190.0
+offset_bottom = 135.0
 text = "QWE  + R"
 
 [node name="Label3" type="Label" parent="List"]
 layout_mode = 0
-offset_left = 73.0
-offset_top = 160.0
-offset_right = 200.0
-offset_bottom = 187.0
+offset_left = 61.0
+offset_top = 162.0
+offset_right = 188.0
+offset_bottom = 189.0
 text = "QEE  + R"
 
 [node name="Label7" type="Label" parent="List"]
-offset_left = 69.0
-offset_top = 314.0
-offset_right = 218.0
-offset_bottom = 341.0
-text = "QWE + D + QEE + R"
+layout_mode = 0
+offset_left = 57.0
+offset_top = 316.0
+offset_right = 206.0
+offset_bottom = 343.0
+text = "          +D+        +R"
 
 [node name="Label6" type="Label" parent="List"]
-offset_left = 72.0
-offset_top = 261.0
-offset_right = 221.0
-offset_bottom = 288.0
-text = "QQQ + D + QEE + R"
+layout_mode = 0
+offset_left = 60.0
+offset_top = 263.0
+offset_right = 209.0
+offset_bottom = 290.0
+text = "          +D+        +R"
 
 [node name="Label5" type="Label" parent="List"]
 layout_mode = 0
-offset_left = 70.0
-offset_top = 212.0
-offset_right = 197.0
-offset_bottom = 239.0
-text = "QQQ + D + QWE + R"
+offset_left = 58.0
+offset_top = 214.0
+offset_right = 207.0
+offset_bottom = 241.0
+text = "          +D+        +R"
 
-[node name="List2" type="TextureRect" parent="."]
-offset_left = 304.0
-offset_top = 483.0
-offset_right = 763.0
-offset_bottom = 624.0
-texture = ExtResource("4_rwq73")
-expand_mode = 1
-
-[node name="SpellsLabel" type="Label" parent="."]
+[node name="blue" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 446.0
-offset_top = 516.0
-offset_right = 659.0
-offset_bottom = 579.0
-text = "EMPTY"
-label_settings = SubResource("LabelSettings_rwq73")
+offset_left = 167.0
+offset_top = 307.0
+offset_right = 198.0
+offset_bottom = 337.0
+texture = ExtResource("5_2qula")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="yellow" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 307.0
+offset_right = 134.0
+offset_bottom = 337.0
+texture = ExtResource("6_2n343")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="blue3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 355.0
+offset_right = 198.0
+offset_bottom = 385.0
+texture = ExtResource("7_v8d4b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="yellow3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 355.0
+offset_right = 134.0
+offset_bottom = 385.0
+texture = ExtResource("6_2n343")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="blue2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 407.0
+offset_right = 198.0
+offset_bottom = 437.0
+texture = ExtResource("7_v8d4b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="yellow2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 407.0
+offset_right = 134.0
+offset_bottom = 437.0
+texture = ExtResource("5_2qula")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="01" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 459.0
+offset_right = 514.0
+offset_bottom = 609.0
+texture = ExtResource("2_2n343")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="02" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 455.0
+offset_right = 665.0
+offset_bottom = 619.0
+texture = ExtResource("2_2n343")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="03" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 455.0
+offset_right = 813.0
+offset_bottom = 616.0
+texture = ExtResource("2_2n343")
+expand_mode = 1
+stretch_mode = 4
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

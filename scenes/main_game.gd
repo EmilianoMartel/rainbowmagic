@@ -41,7 +41,7 @@ func _on_confirm(combination: Array[StringName]):
 				known_basic_spells.append(basic_spell)
 			
 			created_basic_spell = true
-			ui.handle_success(current_spell.color)
+			ui.handle_success(current_spell.full_view)
 			success += 1
 			break 
 
@@ -91,7 +91,7 @@ func _on_mix(combination: Array):
 	if current_spell and current_spell.compare_combination(combination):
 		print("Success mixing:", current_spell.name)
 		success += 1
-		ui.handle_success(current_spell.color)
+		ui.handle_success(current_spell.full_view)
 		success_combination.emit()
 		known_spells.append(current_spell.name)
 	else:

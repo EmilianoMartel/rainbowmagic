@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="SpellResource" load_steps=6 format=3 uid="uid://br2feftpoty86"]
+[gd_resource type="Resource" script_class="SpellResource" load_steps=7 format=3 uid="uid://br2feftpoty86"]
 
 [ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="1_6ah1r"]
 [ext_resource type="Resource" uid="uid://2vnc67ego0k" path="res://resorces/QWE.tres" id="2_1wnx1"]
 [ext_resource type="Script" uid="uid://d1fivg5a8xrkr" path="res://objects/data/special_spell.gd" id="2_7cu7n"]
 [ext_resource type="Resource" uid="uid://coypkjrwyn42w" path="res://resorces/QEE.tres" id="3_voxqd"]
-[ext_resource type="Texture2D" uid="uid://dimou40lee4p6" path="res://art/spells_icons/naranja.png" id="5_os7mv"]
+[ext_resource type="Texture2D" uid="uid://bn0qr8k8ek5on" path="res://art/spell_color/naranja.png" id="4_voxqd"]
+[ext_resource type="Texture2D" uid="uid://c4lydyvc1waex" path="res://art/spells_empty/g_naranja.png" id="6_os7mv"]
 
 [resource]
 script = ExtResource("2_7cu7n")
 name = "Orange"
 combination = Array[ExtResource("1_6ah1r")]([ExtResource("2_1wnx1"), ExtResource("3_voxqd")])
 color = Color(0.788235, 0.533333, 0, 1)
-type_view = ExtResource("5_os7mv")
+type_view = ExtResource("6_os7mv")
+full_view = ExtResource("4_voxqd")
 metadata/_custom_type_script = "uid://d1fivg5a8xrkr"

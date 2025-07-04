@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="SpellResource" load_steps=6 format=3 uid="uid://gev8p2xyfu61"]
+[gd_resource type="Resource" script_class="SpellResource" load_steps=7 format=3 uid="uid://gev8p2xyfu61"]
 
 [ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="1_y5w7f"]
 [ext_resource type="Script" uid="uid://d1fivg5a8xrkr" path="res://objects/data/special_spell.gd" id="2_bj1tn"]
 [ext_resource type="Resource" uid="uid://nppa8esb24qc" path="res://resorces/QQQ.tres" id="2_mn3ks"]
 [ext_resource type="Resource" uid="uid://2vnc67ego0k" path="res://resorces/QWE.tres" id="3_ikkmk"]
-[ext_resource type="Texture2D" uid="uid://0l44mokpnpbe" path="res://art/spells_icons/tierra.png" id="5_ikkmk"]
+[ext_resource type="Texture2D" uid="uid://cb4lpjtbgfyq0" path="res://art/spell_color/verde.png" id="4_hjuca"]
+[ext_resource type="Texture2D" uid="uid://btp8y4jdl4utd" path="res://art/spells_empty/g_verde.png" id="6_pg1ht"]
 
 [resource]
 script = ExtResource("2_bj1tn")
 name = "earth"
 combination = Array[ExtResource("1_y5w7f")]([ExtResource("2_mn3ks"), ExtResource("3_ikkmk")])
 color = Color(0, 0.563816, 1.92523e-07, 1)
-type_view = ExtResource("5_ikkmk")
+type_view = ExtResource("6_pg1ht")
+full_view = ExtResource("4_hjuca")
 metadata/_custom_type_script = "uid://d1fivg5a8xrkr"

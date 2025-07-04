@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c7xsvycfditan"]
+[gd_scene load_steps=21 format=3 uid="uid://c7xsvycfditan"]
 
 [ext_resource type="Script" uid="uid://b13m5syl4v3a6" path="res://scenes/main_game.gd" id="1_s3esy"]
 [ext_resource type="Script" uid="uid://bcjio3n2ce7sd" path="res://objects/input_handler.gd" id="2_d2op2"]
@@ -7,18 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://caqkv0bluen13" path="res://scenes/end_game.tscn" id="4_2l77h"]
 [ext_resource type="Resource" uid="uid://dvohq1yry61ny" path="res://resorces/fullspells/lion.tres" id="4_8xp80"]
 [ext_resource type="Texture2D" uid="uid://ccr51xcbqbn5d" path="res://art/mago.png" id="4_ygxny"]
-[ext_resource type="Texture2D" uid="uid://cibkut0ykv8cl" path="res://art/bgs/bg.png" id="5_nqdth"]
 [ext_resource type="Resource" uid="uid://b2500hxw8euvl" path="res://resorces/fullspells/red.tres" id="5_sp04v"]
 [ext_resource type="Resource" uid="uid://b4yvlh3440cbx" path="res://resorces/fullspells/violet.tres" id="6_5luka"]
 [ext_resource type="PackedScene" uid="uid://cp00wscnxftj4" path="res://scenes/ui_game.tscn" id="6_ygxny"]
 [ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="7_ihbck"]
-[ext_resource type="Texture2D" uid="uid://cvtwl7kckjb0q" path="res://art/spell.png" id="7_wi4c7"]
 [ext_resource type="Resource" uid="uid://br2feftpoty86" path="res://resorces/fullspells/orange.tres" id="7_yu8cv"]
-[ext_resource type="Texture2D" uid="uid://cql1m2y71c7w5" path="res://art/spells_icons/leo.png" id="8_70vka"]
 [ext_resource type="Resource" uid="uid://coypkjrwyn42w" path="res://resorces/QEE.tres" id="8_vnsdt"]
 [ext_resource type="Resource" uid="uid://nppa8esb24qc" path="res://resorces/QQQ.tres" id="9_ikqpi"]
 [ext_resource type="Resource" uid="uid://2vnc67ego0k" path="res://resorces/QWE.tres" id="10_5luka"]
 [ext_resource type="AudioStream" uid="uid://b17e8f0f8wa48" path="res://sound/Sunlight Through Leaves.mp3" id="11_vnsdt"]
+[ext_resource type="Texture2D" uid="uid://55nivwpl5ng" path="res://art/square.png" id="14_yu8cv"]
+[ext_resource type="Texture2D" uid="uid://uiceg4r33m8d" path="res://art/spell_color/amarillo.png" id="17_yu8cv"]
+[ext_resource type="Texture2D" uid="uid://dv76sqwwcrp80" path="res://art/spells_empty/g_azul.png" id="18_yu8cv"]
+[ext_resource type="Texture2D" uid="uid://bvdni2sex71yv" path="res://art/new/mano front.png" id="20_yu8cv"]
 
 [node name="MainGame" type="Node2D" node_paths=PackedStringArray("input_handler", "ui")]
 script = ExtResource("1_s3esy")
@@ -34,24 +35,32 @@ stream = ExtResource("11_vnsdt")
 autoplay = true
 
 [node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(569, 336)
-scale = Vector2(0.4625, 0.4625)
-texture = ExtResource("5_nqdth")
+modulate = Color(0.113725, 0.0941176, 0.0588235, 1)
+position = Vector2(566.5, 351)
+scale = Vector2(2.4043, 1.41797)
+texture = ExtResource("14_yu8cv")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(844, 361)
+position = Vector2(941.078, 403.5)
 scale = Vector2(0.522239, 0.522239)
 texture = ExtResource("4_ygxny")
 script = ExtResource("2_d2op2")
 
 [node name="Spell" type="Sprite2D" parent="."]
-position = Vector2(463, 260)
-scale = Vector2(0.559783, 0.559783)
-texture = ExtResource("7_wi4c7")
+modulate = Color(1, 1, 1, 0)
+position = Vector2(560.078, 302.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_yu8cv")
 
 [node name="SpellToDo" type="Sprite2D" parent="."]
-position = Vector2(456, 257)
-texture = ExtResource("8_70vka")
+position = Vector2(560.578, 302.5)
+scale = Vector2(0.502573, 0.501792)
+texture = ExtResource("18_yu8cv")
+
+[node name="ManoFront" type="Sprite2D" parent="."]
+position = Vector2(514.078, 423.5)
+scale = Vector2(0.519458, 0.541667)
+texture = ExtResource("20_yu8cv")
 
 [node name="UI_Game" parent="." node_paths=PackedStringArray("input", "game_manager", "spell_to_do", "spell") instance=ExtResource("6_ygxny")]
 anchors_preset = 0

@@ -1,0 +1,80 @@
+[gd_scene load_steps=21 format=3 uid="uid://c7xsvycfditan"]
+
+[ext_resource type="Script" uid="uid://b13m5syl4v3a6" path="res://scenes/main_game.gd" id="1_s3esy"]
+[ext_resource type="Script" uid="uid://bcjio3n2ce7sd" path="res://objects/input_handler.gd" id="2_d2op2"]
+[ext_resource type="Resource" uid="uid://gev8p2xyfu61" path="res://resorces/fullspells/earth.tres" id="2_o6v7o"]
+[ext_resource type="Resource" uid="uid://bvemsjjpgbyke" path="res://resorces/fullspells/jupiter.tres" id="3_wjob3"]
+[ext_resource type="PackedScene" uid="uid://caqkv0bluen13" path="res://scenes/end_game.tscn" id="4_2l77h"]
+[ext_resource type="Resource" uid="uid://dvohq1yry61ny" path="res://resorces/fullspells/lion.tres" id="4_8xp80"]
+[ext_resource type="Texture2D" uid="uid://ccr51xcbqbn5d" path="res://art/mago.png" id="4_ygxny"]
+[ext_resource type="Texture2D" uid="uid://cibkut0ykv8cl" path="res://art/bgs/bg.png" id="5_nqdth"]
+[ext_resource type="Resource" uid="uid://b2500hxw8euvl" path="res://resorces/fullspells/red.tres" id="5_sp04v"]
+[ext_resource type="Resource" uid="uid://b4yvlh3440cbx" path="res://resorces/fullspells/violet.tres" id="6_5luka"]
+[ext_resource type="PackedScene" uid="uid://cp00wscnxftj4" path="res://scenes/ui_game.tscn" id="6_ygxny"]
+[ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="7_ihbck"]
+[ext_resource type="Resource" uid="uid://br2feftpoty86" path="res://resorces/fullspells/orange.tres" id="7_yu8cv"]
+[ext_resource type="Resource" uid="uid://coypkjrwyn42w" path="res://resorces/QEE.tres" id="8_vnsdt"]
+[ext_resource type="Resource" uid="uid://nppa8esb24qc" path="res://resorces/QQQ.tres" id="9_ikqpi"]
+[ext_resource type="Resource" uid="uid://2vnc67ego0k" path="res://resorces/QWE.tres" id="10_5luka"]
+[ext_resource type="AudioStream" uid="uid://b17e8f0f8wa48" path="res://sound/Sunlight Through Leaves.mp3" id="11_vnsdt"]
+[ext_resource type="Texture2D" uid="uid://uiceg4r33m8d" path="res://art/spell_color/amarillo.png" id="17_yu8cv"]
+[ext_resource type="Texture2D" uid="uid://dv76sqwwcrp80" path="res://art/spells_empty/g_azul.png" id="18_yu8cv"]
+[ext_resource type="Texture2D" uid="uid://bvdni2sex71yv" path="res://art/new/mano front.png" id="20_yu8cv"]
+
+[node name="MainGame" type="Node2D" node_paths=PackedStringArray("input_handler", "ui")]
+script = ExtResource("1_s3esy")
+input_handler = NodePath("Icon")
+spells_max_count = 5
+ui = NodePath("UI_Game")
+spell_resources = Array[Resource]([ExtResource("2_o6v7o"), ExtResource("3_wjob3"), ExtResource("4_8xp80"), ExtResource("5_sp04v"), ExtResource("6_5luka"), ExtResource("7_yu8cv")])
+final_scene = ExtResource("4_2l77h")
+basic_spells_list = Array[ExtResource("7_ihbck")]([ExtResource("8_vnsdt"), ExtResource("9_ikqpi"), ExtResource("10_5luka")])
+
+[node name="SunlightThroughLeaves" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_vnsdt")
+autoplay = true
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(569, 336)
+scale = Vector2(0.4625, 0.4625)
+texture = ExtResource("5_nqdth")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(844, 361)
+scale = Vector2(0.522239, 0.522239)
+texture = ExtResource("4_ygxny")
+script = ExtResource("2_d2op2")
+
+[node name="Spell" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(463, 260)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_yu8cv")
+
+[node name="SpellToDo" type="Sprite2D" parent="."]
+position = Vector2(463.5, 260)
+scale = Vector2(0.502573, 0.501792)
+texture = ExtResource("18_yu8cv")
+
+[node name="UI_Game" parent="." node_paths=PackedStringArray("input", "game_manager", "spell_to_do", "spell") instance=ExtResource("6_ygxny")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 23.0
+offset_top = 26.0
+offset_right = 23.0
+offset_bottom = 26.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 0
+input = NodePath("../Icon")
+game_manager = NodePath("..")
+spell_to_do = NodePath("../SpellToDo")
+spell = NodePath("../Spell")
+
+[node name="ManoFront" type="Sprite2D" parent="."]
+position = Vector2(418, 381)
+scale = Vector2(0.546448, 0.546448)
+texture = ExtResource("20_yu8cv")
+
+[connection signal="time_end" from="UI_Game" to="." method="_on_ui_game_time_end"]

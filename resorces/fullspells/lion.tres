@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="SpellResource" load_steps=5 format=3 uid="uid://dvohq1yry61ny"]
+[gd_resource type="Resource" script_class="SpellResource" load_steps=6 format=3 uid="uid://dvohq1yry61ny"]
 
 [ext_resource type="Script" uid="uid://bnw2cs11djrbm" path="res://objects/data/spell_resource.gd" id="1_12ju4"]
 [ext_resource type="Script" uid="uid://d1fivg5a8xrkr" path="res://objects/data/special_spell.gd" id="1_keayx"]
 [ext_resource type="Resource" uid="uid://nppa8esb24qc" path="res://resorces/QQQ.tres" id="1_njj5c"]
-[ext_resource type="Texture2D" uid="uid://cql1m2y71c7w5" path="res://art/spells_icons/leo.png" id="3_12ju4"]
+[ext_resource type="Texture2D" uid="uid://uiceg4r33m8d" path="res://art/spell_color/amarillo.png" id="3_wt5yv"]
+[ext_resource type="Texture2D" uid="uid://dojlvxt5q7y0l" path="res://art/spells_empty/g_amarillo.png" id="5_02vpv"]
 
 [resource]
 script = ExtResource("1_keayx")
 name = "Lion"
 combination = Array[ExtResource("1_12ju4")]([ExtResource("1_njj5c")])
 color = Color(0.666607, 0.666606, 7.70092e-07, 1)
-type_view = ExtResource("3_12ju4")
+type_view = ExtResource("5_02vpv")
+full_view = ExtResource("3_wt5yv")
 metadata/_custom_type_script = "uid://d1fivg5a8xrkr"
